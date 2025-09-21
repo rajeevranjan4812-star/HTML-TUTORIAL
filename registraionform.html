@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Simple Registration Form (HTML only)</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <p class="small">Fill the fields and press <strong>Register</strong>. This uses only HTML (built-in browser validation).</p>
+
+    <!--
+      Notes:
+      - This file is HTML-only. Browser will perform validation based on attributes like required, type, pattern.
+      - To actually send data to a server, set the form "action" to a server URL and method to "post".
+    -->
+
+    <form action="#" method="post">
+      <div class="row">
+        <div class="field">
+          <label for="first">First name</label>
+          <input id="first" name="first" type="text" placeholder="Anita" required minlength="2" />
+        </div>
+
+        <div class="field">
+          <label for="last">Last name</label>
+          <input id="last" name="last" type="text" placeholder="Sharma" required minlength="2" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required />
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="At least 6 characters" required minlength="6" />
+        </div>
+
+        <div class="field">
+          <label for="mobile">Mobile (10 digits)</label>
+          <!-- pattern enforces 10 digits here -->
+          <input id="mobile" name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" placeholder="9876543210" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of birth</label>
+        <input id="dob" name="dob" type="date" required />
+      </div>
+
+      <div class="field">
+        <label>Gender</label>
+        <div class="row">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="">-- choose --</option>
+          <option>India</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Australia</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field terms">
+        <input id="agree" name="agree" type="checkbox" required />
+        <label for="agree" class="small">I agree to the terms and conditions</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+      </div>
+
+    </form>
+
+    <p class="small" style="margin-top:12px">Limitations: With only HTML you cannot compare "password" and "confirm password" on the page (that needs JavaScript). You also cannot save data to a server without a backend URL in the form's <code>action</code>.</p>
+  </div>
+</body>
+</html>
